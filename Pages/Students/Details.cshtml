@@ -1,0 +1,37 @@
+﻿@page
+@model Student_Management.Pages.Students.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+<header class="bg-dark text-white">
+    <div class="container text-center">
+        <h1>Welcome to Student Management System!</h1>
+        <p class="lead">Manage Students and Courses.  </p>
+    </div>
+</header>
+<h2>Details</h2>
+
+<div>
+    <h4>Student</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Student.StudentName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Student.StudentName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Student.ContactNumber)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Student.ContactNumber)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a class="btn btn-outline-primary" asp-page="./Edit" asp-route-id="@Model.Student.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+
+</div>

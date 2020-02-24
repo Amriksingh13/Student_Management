@@ -1,0 +1,40 @@
+﻿@page
+@model Student_Management.Pages.Courses.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+<header class="bg-dark text-white">
+    <div class="container text-center">
+        <h1>Welcome to Student Management System!</h1>
+        <p class="lead">Manage Students and Courses.  </p>
+    </div>
+</header>
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Course</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Course.CourseName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Course.CourseName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Course.Credits)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Course.Credits)
+        </dd>
+    </dl>
+
+    <form method="post">
+        <input type="hidden" asp-for="Course.Id" />
+        <input type="submit" value="Delete" class="btn btn-outline-primary" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>
